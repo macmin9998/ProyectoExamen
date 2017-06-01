@@ -56,7 +56,7 @@ echo "variablePHP = ".$variablePHP;
         <div/>
 
         </h1>  
-
+        <h2>Carlos Castro Reyes</h2>
     
         
     	<?php
