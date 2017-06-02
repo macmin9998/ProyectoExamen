@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['sun'])){
 
 include "includs/conexion.php";
 
@@ -83,5 +85,13 @@ if(count($errors) == 0) {
         	</form>
         </center>
 	</div>
+
+    <?php
+}
+    
+else{
+     header("location: sinSesion.html");
+}
+?>   
 </body>
 </html>

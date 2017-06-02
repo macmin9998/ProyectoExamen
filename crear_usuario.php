@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION['sun'])){
+
 	include("includs/conexion.php");
 ?>
 <!DOCTYPE html>
@@ -94,6 +97,10 @@
 
 			}
 				?>
-			
+<?php
+}else{
+	header("location: sinSesion.html");
+}
+?>			
 	</body>
 </html>

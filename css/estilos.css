@@ -4,9 +4,15 @@ body{
 	background-attachment: fixed;	
 }
 
-a{
-	color:black;
+/*estilo para pagina Lista.php*/
+.listaExamen{
+	color:rgb(3,7,96);
 	text-decoration: none;
+	font-weight: bold;
+}
+/*estilo para pagina Crea.php*/
+.formatoPreguntaRespuesta{
+	color:rgb(3,7,96);
 }
 
 .linkAgregarPregunta{
@@ -81,6 +87,35 @@ a{
 	margin-bottom: 5px;
 }
 
+/*estilo para pagina generaCajas y sinSesion.hml*/
+.boton{
+	padding: 8px 16px;
+	background: #31384A;
+	border: 0;
+	display: block;
+	font-weight: bold;
+	color: white;
+	border-radius: 6px;
+}
+/*estilo para pagina generaCajas*/
+.boton:hover{
+	transform: scale(0.95);
+}
+/*estilo para sinSesion.html*/
+.noSesion{
+	width: 400px;
+	color: #fff;
+	text-align: center;
+	font-size: 25px;
+	background: rgba(85,85,85,0.3);
+	padding: 6px;
+	border-radius: 7px;
+	margin: auto;
+	margin-top: 60px;
+	border-radius: 20px;
+
+}
+
 h1{
 	margin-bottom: 20px;
 	font-size: 21px;
@@ -112,6 +147,7 @@ form input[type="submit"]{
 	font-weight: bold;
 	color: white;
 	border-radius: 6px;
+	cursor: pointer;
 }
 form input[type="submit"]:hover{
 	transform: scale(0.95);

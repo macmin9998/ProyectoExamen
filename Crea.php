@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['sun'])){
 
 include "includs/conexion.php";
 $id = $_GET['id'];
@@ -6,7 +8,7 @@ $id = $_GET['id'];
 $busquedaExamen=$conexion->query("select id,nombre from examen where id=$id ");
 
 
-$buscaPreguntasExamen=$conexion->query(" select titulo,o.nombre, o.tipo from examen as exa join encuestas as e on exa.id=e.id_examen join opciones as o on e.id=o.id_encuesta where exa.id='$id' ;");
+$buscaPreguntasExamen=$conexion->query(" select titulo,o.nombre, o.valor, o.tipo from examen as exa join encuestas as e on exa.id=e.id_examen join opciones as o on e.id=o.id_encuesta where exa.id='$id' ;");
 
 
 while($exa = $busquedaExamen->fetch_assoc()){
@@ -52,14 +54,14 @@ while($exa = $busquedaExamen->fetch_assoc()){
 			
 			if($variable != $variableActual){
                 $cont++;
-				echo"<br><h3>".$cont.".-&nbsp;".$variable."<h3><br>";
+				echo"<br><h3 class='formatoPreguntaRespuesta'>".$cont.".-&nbsp;".$variable."<h3><br>";
 				$variableActual=$variable; 
 			}
            
             if( $mostrarExamen['tipo'] == 1 ){
 
-           		echo"<input type='radio' >" .$mostrarExamen['nombre']. "&nbsp;&nbsp;"; 
-           		echo "<br>";
+           		echo"<strong class='formatoPreguntaRespuesta'><input type='radio' name='rad".$cont."'  value='".$mostrarExamen['valor']."'>" .$mostrarExamen['nombre']. "&nbsp;&nbsp;"; 
+           		echo "</strong><br>";
     		}elseif( $mostrarExamen['tipo'] == 2){
                 echo"<input type='checkbox'>" .$mostrarExamen['nombre']. "&nbsp;&nbsp;";
                 echo "<br>";  
@@ -83,5 +85,11 @@ while($exa = $busquedaExamen->fetch_assoc()){
     	
     	
 	</div>
+<?php
+
+}else{
+    header("location: sinSesion.html");
+}
+?>    
 </body>
 </html>

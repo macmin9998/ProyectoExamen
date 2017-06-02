@@ -1,4 +1,6 @@
 <?php 
+session_start();
+if(isset($_SESSION['sun'])){
 
 include "includs/conexion.php";
 
@@ -53,13 +55,15 @@ if(isset($_POST['enviar'])){
         $insertOpciones="INSERT INTO opciones(id_encuesta,nombre,valor,id_examenop,tipo) values";
         
 		for($i=1;$i<=$num;$i++){
-
+                
 
 			$opcnativa = trim($_POST['opc'.$i]); // obtenemos el nombre de cada opcion indivudalmente.
 			if($opcnativa != ""){
-				$insertOpciones .= "('$id_encuesta',  '$opcnativa',  '0','$id','1')"; // el id de la opcion ira null para que se ponga automaticamente, en id_encuesta pues ira el id de la encuesta que acabamos de crear, en 'nombre' ira el nombre de la opcion y valor ira 0, puesto que es una nueva opcion sin votos, esto se repetira con todas las opciones que el usuario haya definido.
+				$insertOpciones .= "('$id_encuesta',  '$opcnativa',  '".$i."','$id','1')"; // el id de la opcion ira null para que se ponga automaticamente, en id_encuesta pues ira el id de la encuesta que acabamos de crear, en 'nombre' ira el nombre de la opcion y valor ira 0, puesto que es una nueva opcion sin votos, esto se repetira con todas las opciones que el usuario haya definido.
 				$cont++;
 			}
+
+
 			if($i == $num){
 				$insertOpciones .= ";"; // si es que se llega al final, termina la consulta
 			}else{
@@ -183,5 +187,12 @@ if(isset($_POST['enviar'])){
     
 
 	</div>
+
+<?php
+}else{
+	header("location: sinSesion.html");
+}
+
+?>
 </body>
 </html>
