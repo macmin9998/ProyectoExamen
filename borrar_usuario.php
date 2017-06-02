@@ -34,7 +34,8 @@ if(isset($_SESSION['sun'])){
 		<?php
 			if(isset($_POST['borrar']))
 			{
-				if (isset($_POST['usuario']) || $_POST['usuario']=="") 
+				 $errors = array();
+				if (!isset($_POST['usuario']) || $_POST['usuario']=="") 
 				{
 					$errors[]="Se requiere del usuario";
 				}	

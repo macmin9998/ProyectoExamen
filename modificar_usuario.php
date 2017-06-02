@@ -41,6 +41,7 @@ if(isset($_SESSION['sun'])){
 		<?php
 			if(isset($_POST['modificar']))
 			{
+				 $errors = array();
 				if (!isset($_POST['usuario']) || $_POST['usuario']=="") 
 				{
 
