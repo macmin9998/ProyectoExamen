@@ -1,5 +1,7 @@
+
 <?php
 	include("includs/conexion.php");
+ 	session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,7 +68,14 @@
 		<?php
 					}	
 					else{
-			 				header("location: menu_usuario.html");
+                            
+                         	$_SESSION['sun']=$_POST['usuario'];
+
+                            header("location: menu_usuario.php");
+                           
+
+
+			 				//header("location: menu_usuario.html");
 					    }
 				}
 			}

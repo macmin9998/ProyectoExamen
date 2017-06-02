@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['sun'])){
 
 include "includs/conexion.php";
 $id = $_GET['id'];
@@ -83,5 +85,11 @@ while($exa = $busquedaExamen->fetch_assoc()){
     	
     	
 	</div>
+<?php
+
+}else{
+    echo "no hay sesion";
+}
+?>    
 </body>
 </html>
