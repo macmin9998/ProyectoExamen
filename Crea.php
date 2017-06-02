@@ -60,8 +60,12 @@ while($exa = $busquedaExamen->fetch_assoc()){
            
             if( $mostrarExamen['tipo'] == 1 ){
 
+
            		echo"<strong class='formatoPreguntaRespuesta'><input type='radio' name='rad".$cont."'  value='".$mostrarExamen['valor']."'>" .$mostrarExamen['nombre']. "&nbsp;&nbsp;"; 
            		echo "</strong><br>";
+
+           		
+
     		}elseif( $mostrarExamen['tipo'] == 2){
                 echo"<input type='checkbox'>" .$mostrarExamen['nombre']. "&nbsp;&nbsp;";
                 echo "<br>";  
@@ -88,7 +92,11 @@ while($exa = $busquedaExamen->fetch_assoc()){
 <?php
 
 }else{
+
     header("location: sinSesion.html");
+
+    echo "no hay sesion";
+
 }
 ?>    
 </body>

@@ -190,7 +190,10 @@ if(isset($_POST['enviar'])){
 
 <?php
 }else{
+
 	header("location: sinSesion.html");
+
+
 }
 
 ?>

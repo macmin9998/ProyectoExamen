@@ -51,8 +51,12 @@ $consultaExamen=$conexion->query("select id,nombre from examen ;");
 		</div>
 <?php
 }else{
+
     
     header("location: sinSesion.html"); 
+
+    
+
 }
 ?>
 
