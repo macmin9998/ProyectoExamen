@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION['sun'])){
+
 include "includs/conexion.php";
 
 $consultaExamen=$conexion->query("select id,nombre from examen ;");
@@ -46,5 +49,11 @@ $consultaExamen=$conexion->query("select id,nombre from examen ;");
 
 		
 		</div>
+<?php
+}else{
+    echo "no hay sesion";   
+}
+?>
+
 </body>
 </html>

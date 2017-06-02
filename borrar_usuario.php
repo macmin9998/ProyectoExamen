@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['sun'])){
 	include("includs/conexion.php")
 ?>
 <!DOCTYPE html>
@@ -67,7 +69,13 @@
 				}
 
 			}	
+
 				?>
-			
+
+<?php
+}else{
+	"no has iniciado sesion";
+}
+?>			
 	</body>
 </html>

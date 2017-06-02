@@ -1,4 +1,6 @@
 <?php 
+session_start();
+if(isset($_SESSION['sun'])){
 
 include "includs/conexion.php";
 
@@ -185,5 +187,12 @@ if(isset($_POST['enviar'])){
     
 
 	</div>
+
+<?php
+}else{
+	echo "no has iniciado sesion";
+}
+
+?>
 </body>
 </html>
