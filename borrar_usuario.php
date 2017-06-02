@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['sun'])){
-	include("includs/conexion.php")
+	include("includs/conexion.php");
 ?>
 <!DOCTYPE html>
 <html>

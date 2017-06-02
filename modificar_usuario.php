@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['sun'])){
 
-	$conexion=mysqli_connect("localhost","root","","examenes");
+	include("includs/conexion.php");
 ?>
 <!DOCTYPE html>
 <html>
