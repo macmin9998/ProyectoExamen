@@ -35,7 +35,7 @@ $consultaExamen=$conexion->query("select id,nombre from examen ;");
                 while($exa = $consultaExamen->fetch_assoc()){
                           
                     
-                    echo "<li><a href='Crea.php?id=".$exa['id']." ' >".$exa['nombre']."</a></li><br> ";
+                    echo "<li class='listaExamen'><a href='Crea.php?id=".$exa['id']." ' >".$exa['nombre']."</a></li><br> ";
                   
 
                    
@@ -51,7 +51,12 @@ $consultaExamen=$conexion->query("select id,nombre from examen ;");
 		</div>
 <?php
 }else{
-    echo "no hay sesion";   
+
+    
+    header("location: sinSesion.html"); 
+
+    
+
 }
 ?>
 

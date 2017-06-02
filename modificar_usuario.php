@@ -2,7 +2,11 @@
 session_start();
 if(isset($_SESSION['sun'])){
 
+
+	
+
 	include("includs/conexion.php");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -95,7 +99,11 @@ if(isset($_SESSION['sun'])){
 				?>
 <?php
 }else{
-	echo "no has iniciado sesion";
+
+	header("location: sinSesion.html");
+
+	
+
 }
 ?>
 

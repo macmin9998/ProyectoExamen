@@ -190,7 +190,10 @@ if(isset($_POST['enviar'])){
 
 <?php
 }else{
-	echo "no has iniciado sesion";
+
+	header("location: sinSesion.html");
+
+
 }
 
 ?>

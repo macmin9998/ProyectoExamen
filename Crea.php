@@ -54,14 +54,18 @@ while($exa = $busquedaExamen->fetch_assoc()){
 			
 			if($variable != $variableActual){
                 $cont++;
-				echo"<br><h3>".$cont.".-&nbsp;".$variable."<h3><br>";
+				echo"<br><h3 class='formatoPreguntaRespuesta'>".$cont.".-&nbsp;".$variable."<h3><br>";
 				$variableActual=$variable; 
 			}
            
             if( $mostrarExamen['tipo'] == 1 ){
 
-           		echo"<input type='radio' name='rad".$cont."'  value='".$mostrarExamen['valor']."'>" .$mostrarExamen['nombre']. "&nbsp;&nbsp;"; 
-           		echo "<br>";
+
+           		echo"<strong class='formatoPreguntaRespuesta'><input type='radio' name='rad".$cont."'  value='".$mostrarExamen['valor']."'>" .$mostrarExamen['nombre']. "&nbsp;&nbsp;"; 
+           		echo "</strong><br>";
+
+           		
+
     		}elseif( $mostrarExamen['tipo'] == 2){
                 echo"<input type='checkbox'>" .$mostrarExamen['nombre']. "&nbsp;&nbsp;";
                 echo "<br>";  
@@ -88,7 +92,11 @@ while($exa = $busquedaExamen->fetch_assoc()){
 <?php
 
 }else{
+
+    header("location: sinSesion.html");
+
     echo "no hay sesion";
+
 }
 ?>    
 </body>

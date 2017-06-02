@@ -90,7 +90,9 @@ if(count($errors) == 0) {
 }
     
 else{
-    echo "no hay sesion";
+
+     header("location: sinSesion.html");
+
 }
 ?>   
 </body>

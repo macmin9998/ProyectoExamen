@@ -99,7 +99,11 @@ if(isset($_SESSION['sun'])){
 				?>
 <?php
 }else{
-	echo "no has iniciado sesion";
+
+	header("location: sinSesion.html");
+
+	
+
 }
 ?>			
 	</body>
