@@ -1,34 +1,14 @@
-.barra{
-	background: #ff3019;
-	background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
-	background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
-	background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
-	clear: both;
-	height: 15px;
-	color: white;
-	font-weight: bold;
-	text-align: right;
-	padding: 6px;
-	border-radius: 4px;
-	max-width: 356px;
-	min-width: 20px;
-}
-
-/* A partir de aqui es solo cosmetico, lo puedes borrar */
-
-
-
-
 body{
 	background-image: url(bt.png);
 	background-size: 100vw 100vh;
-	background-attachment: fixed;
-	
+	background-attachment: fixed;	
 }
+
 a{
 	color:black;
 	text-decoration: none;
 }
+
 .linkAgregarPregunta{
 	background: #31384A;
 	width: 150px;
@@ -47,18 +27,18 @@ a{
 	text-decoration: none;
 	color:#fff;
 }
-
-
-
 .fr{
 	float: right;
 }
-.fl, .votar{
+
+.fl{
 	float: left;
 }
+
 .cf{
 	clear: both;
 }
+
 .wrap{
 	padding: 25px;
 	margin: 0 auto;
@@ -78,6 +58,7 @@ a{
 	margin-top: 70px;
 	border: 1px solid #E0E0E0;
 }
+
 .linkvolver{
 	background: #31384A;
 	width: 60px;
@@ -96,8 +77,9 @@ a{
 	color:#fff;
 }
 
-
-
+.fl{
+	margin-bottom: 5px;
+}
 
 h1{
 	margin-bottom: 20px;
@@ -106,6 +88,7 @@ h1{
 	padding-bottom: 15px;
 	text-align: center;
 }
+
 form > div{
 	margin-bottom: 20px;
 }
@@ -133,45 +116,10 @@ form input[type="submit"]{
 form input[type="submit"]:hover{
 	transform: scale(0.95);
 }
-ul.votacion{
+ul{
 	margin-bottom: 25px;
 	list-style: none;
 }
-.votacion li{
-	padding: 8px;
-	background: #FCFCFC;
-	border-radius: 5px;
-	margin-bottom: 5px;
-}
-.votacion li:hover{
-	background: white;
-}
-.votacion li a{
-	color: gray;
-	font-weight: bold;
-	font-size: 16px;
-}
-.votacion li a:hover{
-	color: black;
-}
-.votacion li span{
-	margin-left: 10px;
-}
-.votacion .fl{
-	margin-bottom: 5px;
-}
-.volver{
-	display: block;
-	padding-top: 15px;
-	clear: both;
-}
-.resultado{
-	float: left;
-	margin-left: 10px;
-	margin-top: 7px;
-	color: black;
-}
-
 
 @media (max-width:480px){
 	.wrap{
