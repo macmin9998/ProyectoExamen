@@ -178,7 +178,7 @@ if(isset($_POST['enviar'])){
     
 	 <div class="linkvolver">
     <?php
- 		 echo "<a href='Crea.php?id=".$id." ' >Volver1</a><br> ";
+ 		 echo "<a href='Crea.php?id=".$id." ' >Volver</a><br> ";
     ?>
     </div>
     </form>

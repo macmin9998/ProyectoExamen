@@ -40,7 +40,7 @@ while($exa = $busquedaExamen->fetch_assoc()){
         include("menu_pagina.html");
     ?>
     <div class="wrap_crea">
-    	<h1>Crea preguntas del examen: <?php echo$nombre;?></h1>
+    	<h1>Crea tus preguntas del examen: <?php echo$nombre;?></h1>
     	<?php
 
 		if($buscaPreguntasExamen){
