@@ -1,4 +1,7 @@
 <?php
+session_start();
+if(isset($_SESSION['sun'])){
+
 	include("includs/conexion.php");
 ?>
 <!DOCTYPE html>
@@ -31,6 +34,8 @@
 		<?php
 			if(isset($_POST['crear']))
 			{
+				 $errors = array();
+
 				if (!isset($_POST['usuario']) || $_POST['usuario']=="") 
 				{
 					$errors[]="Se requiere del usuario";		
@@ -94,6 +99,14 @@
 
 			}
 				?>
-			
+<?php
+}else{
+
+	header("location: sinSesion.html");
+
+	
+
+}
+?>			
 	</body>
 </html>

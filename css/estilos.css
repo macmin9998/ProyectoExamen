@@ -1,34 +1,20 @@
-.barra{
-	background: #ff3019;
-	background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
-	background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
-	background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
-	clear: both;
-	height: 15px;
-	color: white;
-	font-weight: bold;
-	text-align: right;
-	padding: 6px;
-	border-radius: 4px;
-	max-width: 356px;
-	min-width: 20px;
-}
-
-/* A partir de aqui es solo cosmetico, lo puedes borrar */
-
-
-
-
 body{
 	background-image: url(bt.png);
 	background-size: 100vw 100vh;
-	background-attachment: fixed;
-	
+	background-attachment: fixed;	
 }
-a{
-	color:black;
+
+/*estilo para pagina Lista.php*/
+.listaExamen{
+	color:rgb(3,7,96);
 	text-decoration: none;
+	font-weight: bold;
 }
+/*estilo para pagina Crea.php*/
+.formatoPreguntaRespuesta{
+	color:rgb(3,7,96);
+}
+
 .linkAgregarPregunta{
 	background: #31384A;
 	width: 150px;
@@ -47,18 +33,18 @@ a{
 	text-decoration: none;
 	color:#fff;
 }
-
-
-
 .fr{
 	float: right;
 }
-.fl, .votar{
+
+.fl{
 	float: left;
 }
+
 .cf{
 	clear: both;
 }
+
 .wrap{
 	padding: 25px;
 	margin: 0 auto;
@@ -78,6 +64,7 @@ a{
 	margin-top: 70px;
 	border: 1px solid #E0E0E0;
 }
+
 .linkvolver{
 	background: #31384A;
 	width: 60px;
@@ -96,8 +83,38 @@ a{
 	color:#fff;
 }
 
+.fl{
+	margin-bottom: 5px;
+}
 
+/*estilo para pagina generaCajas y sinSesion.hml*/
+.boton{
+	padding: 8px 16px;
+	background: #31384A;
+	border: 0;
+	display: block;
+	font-weight: bold;
+	color: white;
+	border-radius: 6px;
+}
+/*estilo para pagina generaCajas*/
+.boton:hover{
+	transform: scale(0.95);
+}
+/*estilo para sinSesion.html*/
+.noSesion{
+	width: 400px;
+	color: #fff;
+	text-align: center;
+	font-size: 25px;
+	background: rgba(85,85,85,0.3);
+	padding: 6px;
+	border-radius: 7px;
+	margin: auto;
+	margin-top: 60px;
+	border-radius: 20px;
 
+}
 
 h1{
 	margin-bottom: 20px;
@@ -106,6 +123,7 @@ h1{
 	padding-bottom: 15px;
 	text-align: center;
 }
+
 form > div{
 	margin-bottom: 20px;
 }
@@ -129,49 +147,15 @@ form input[type="submit"]{
 	font-weight: bold;
 	color: white;
 	border-radius: 6px;
+	cursor: pointer;
 }
 form input[type="submit"]:hover{
 	transform: scale(0.95);
 }
-ul.votacion{
+ul{
 	margin-bottom: 25px;
 	list-style: none;
 }
-.votacion li{
-	padding: 8px;
-	background: #FCFCFC;
-	border-radius: 5px;
-	margin-bottom: 5px;
-}
-.votacion li:hover{
-	background: white;
-}
-.votacion li a{
-	color: gray;
-	font-weight: bold;
-	font-size: 16px;
-}
-.votacion li a:hover{
-	color: black;
-}
-.votacion li span{
-	margin-left: 10px;
-}
-.votacion .fl{
-	margin-bottom: 5px;
-}
-.volver{
-	display: block;
-	padding-top: 15px;
-	clear: both;
-}
-.resultado{
-	float: left;
-	margin-left: 10px;
-	margin-top: 7px;
-	color: black;
-}
-
 
 @media (max-width:480px){
 	.wrap{

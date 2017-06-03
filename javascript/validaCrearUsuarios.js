@@ -3,7 +3,7 @@ function validar(){
 	var clave;
 	usuario=document.getElementById("usuario").value;
 	clave=document.getElementById("clave").value;
-	repetirClave=document.getElementById("repetir_clave");
+	repetirClave=document.getElementById("repetir_clave").value;
 	/*validaciones para usuario*/
 	if(usuario=="" || /^\s+$/.test(usuario)){
 		alert("Error debe de introducir un usuario");
@@ -22,12 +22,6 @@ function validar(){
 		return false;
 	}
 
-	/*validaciones para escolaridad*/
-	selectEscolaridad = document.getElementById("escolaridad").selectedIndex;
-	if(selectEscolaridad == null || selectEscolaridad == 0 ) 
-	{
-  		return false;
-	}
 
 
 }

@@ -1,21 +1,41 @@
 <?php 
 
+session_start();
+if(isset($_SESSION['sun'])){
+
+
+
 if(isset($_POST['Guardar'])){
-	$instruccion=$_POST['txt_instrucciones'];
+  $instruccion=$_POST['txt_instrucciones'];
+
 }
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-	<title>Cajas dinamicas</title>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-</head>
-<body>
 
-<form name="form1" action="" method="POST">
+
+
+	<head>
+		<meta charset="utf-8">
+		<title>Cajas dinamicas</title>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  		<link rel="stylesheet" href="/resources/demos/style.css">
+
+  		<link rel="stylesheet" href="css/estilos.css">
+  		<link rel="stylesheet" href="css/estilos_menu_pagina.css">
+  		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+  		<script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
+	    <script src="javascript/main.js" ></script>
+
+	</head>
+	<body>
+	<?php
+		include("menu_pagina.php");
+	?>
+		<center>
+		<form name="form1" action="" method="POST">
 	<p>	Instrucciones: <input type="text" name="txt_instrucciones" id="txt_instruccion"></p>
     <!--<button type="button" form="form1" onclick="addInstrucciones()" value="Agregar">Agregar</button><br>-->
     <label>Cuantas cajas requiere? </label><select name="select1" onchange="createTexts(this)">
@@ -31,13 +51,13 @@ if(isset($_POST['Guardar'])){
     <button type="submit" form="form1"  value="Guardar">Guardar</button>
     <button type="submit" form="form1"  onclick="formReset()" value="NuevaPreg">Agregar serie de cajas</button>
 </form>
+		</center>
+
 
 	<script>
 	function formReset(){
 		document.getElementById("form1").reset();
 	}
-
-
 
 	function addInstrucciones(){
 	
@@ -69,5 +89,12 @@ if(isset($_POST['Guardar'])){
 
 }
 	</script>
+
+	<?php
+}else{
+	header("location: sinSesion.html");
+}
+?>	
+
 </body>
 </html>

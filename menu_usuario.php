@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(isset($_SESSION['sun'])){
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -47,9 +56,22 @@
 			<li>
 				<div class="link"><i class="fa fa-address-card"></i>Sesión<i class="fa fa-chevron-down"></i></div>
 					<ul class="submenu">
-						<li><a href="login.php">Cerrar Sesión</a></li>
+						<li><a href="close.php">Cerrar Sesión</a></li>
 					</ul>
 			</li>
 		</ul>
+<?php
+
+}else{
+	echo"no hay sesion";
+}
+
+?>
+
+
+
 	</body>
+
+
+
 </html>
