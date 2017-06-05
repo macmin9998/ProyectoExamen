@@ -50,13 +50,14 @@ while($exa = $busquedaExamen->fetch_assoc()){
 	<?php
         include("menu_pagina.html");
     ?>
-            <div class="wrap_crea contendor" id="elemento">
+
+            <div class="wrap_crea contenedor" id="elemento">
                 
                 <form action="" method="post"  >
+                <h2>Registro</h2>
+                <br>
                 <center>
-                    <h2>Registro</h2>
-                    <br>
-                    Sexo:
+                   Sexo:
                     <select id="sexo">
                         <option value="femenino">Femenino</option>
                         <option value="masculino">Masculino</option>
@@ -76,12 +77,17 @@ while($exa = $busquedaExamen->fetch_assoc()){
 
                     <br>
                     <div>
+
                         <br>
+
                         <label for="tags">Ciudad De Origen: </label>
                         <input id="tags" class="ui-autocomplete-input">
                     </div>
                     <br>
+
                     <button class="boton" type="button" id="boton" name="boton">Iniciar Examen</button>
+
+
                 </center>
             </form>
         </div>
@@ -133,7 +139,9 @@ while($exa = $busquedaExamen->fetch_assoc()){
 		}
     
  		echo"<div class='linkAgregarPregunta'>";
+
          echo "<a href='#'>Finalizar Examen</a><br> ";
+
  	     //echo "<a href='agregar1.ph?id=".$id." ' >Agregar pregunta</a><br> ";
     	echo"</div>";
     	 ?>

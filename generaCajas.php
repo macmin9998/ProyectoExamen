@@ -36,10 +36,13 @@ if(isset($_POST['Guardar'])){
 		include("menu_pagina.html");
 	?>
 		<center>
+
 		<form name="form1" action="" method="POST" class="wrap">
 	<p>	Instrucciones: <input type="text" name="txt_instrucciones" id="txt_instruccion"></p>
     <!--<button type="button" form="form1" onclick="addInstrucciones()" value="Agregar">Agregar</button><br>-->
     <br>
+
+
     <label>Cuantas cajas requiere? </label><select name="select1" onchange="createTexts(this)">
     <option value="" selected="selected">          </option>
         <?php
@@ -50,9 +53,12 @@ if(isset($_POST['Guardar'])){
     </select><br>
     <div></div>
     <br>
+
     <button class="boton" type="submit" form="form1"  value="Guardar">Guardar</button>
     <br>
     <button class="boton" type="submit" form="form1"  onclick="formReset()" value="NuevaPreg">Agregar serie de cajas</button>
+
+
 </form>
 		</center>
 
