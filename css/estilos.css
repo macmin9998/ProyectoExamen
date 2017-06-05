@@ -1,3 +1,10 @@
+
+/*Oculta formulario para presentar examen*/
+
+.hiden{
+display: none;
+}
+
 body{
 	background-image: url(bt.png);
 	background-size: 100vw 100vh;
