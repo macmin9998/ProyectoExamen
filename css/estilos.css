@@ -96,6 +96,7 @@ body{
 	font-weight: bold;
 	color: white;
 	border-radius: 6px;
+	cursor: pointer;
 }
 /*estilo para pagina generaCajas*/
 .boton:hover{
@@ -161,7 +162,12 @@ ul{
 	.wrap{
 		width: 80%;
 	}
+}
+
+@media (max-width:768px){
 	.wrap_crea{
 		width: 80%;
 	}
+}
+
 

@@ -29,6 +29,7 @@ while($exa = $busquedaExamen->fetch_assoc()){
     <link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
+
 	<script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
     <script src="javascript/main.js" ></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -49,13 +50,14 @@ while($exa = $busquedaExamen->fetch_assoc()){
 	<?php
         include("menu_pagina.html");
     ?>
+
             <div class="wrap_crea contenedor" id="elemento">
                 
                 <form action="" method="post"  >
                 <h2>Registro</h2>
-
+                <br>
                 <center>
-                    Sexo:
+                   Sexo:
                     <select id="sexo">
                         <option value="femenino">Femenino</option>
                         <option value="masculino">Masculino</option>
@@ -75,11 +77,17 @@ while($exa = $busquedaExamen->fetch_assoc()){
 
                     <br>
                     <div>
+
+                        <br>
+
                         <label for="tags">Ciudad De Origen: </label>
                         <input id="tags" class="ui-autocomplete-input">
                     </div>
                     <br>
-                    <button type="button" id="boton" name="boton">Iniciar Examen</button>
+
+                    <button class="boton" type="button" id="boton" name="boton">Iniciar Examen</button>
+
+
                 </center>
             </form>
         </div>
@@ -131,7 +139,9 @@ while($exa = $busquedaExamen->fetch_assoc()){
 		}
     
  		echo"<div class='linkAgregarPregunta'>";
-         echo "<a>Finalizar Examen</a><br> ";
+
+         echo "<a href='#'>Finalizar Examen</a><br> ";
+
  	     //echo "<a href='agregar1.ph?id=".$id." ' >Agregar pregunta</a><br> ";
     	echo"</div>";
     	 ?>

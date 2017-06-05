@@ -134,22 +134,40 @@ header label{
 	color:#fff;
 }
 
-@media (max-width:1280px){
-	.menu{
-		width: 15%;
-	}
-
-
-@media (max-width:768px){
-	.menu{
-		width: 40%;
-	}
-
-@media (max-width:320px){
+@media (min-width:320px) and (max-width:320px){
 	.menu{
 		width: 50%;
 	}
+}
 
+@media (min-width:360px) and (max-width:375px){
+	.menu{
+		width: 40%;
+	}
+}
 
+@media (min-width:412px) and (max-width:414px){
+	.menu{
+		width: 40%;
+	}
+}
+
+@media (min-width:568px) and (max-width:568px){
+	.menu{
+		width: 30%;
+	}
+}
+
+@media (min-width:640px) and (max-width:768px){
+	.menu{
+		width: 25%;
+	}
+}
+
+@media (min-width:1024px) and (max-width:1366px){
+	.menu{
+		width: 20%;
+	}
+}
 
 
