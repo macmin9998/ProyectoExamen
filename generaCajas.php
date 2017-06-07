@@ -1,14 +1,24 @@
 <?php 
-
-session_start();
+require ("includs/conexion.php");
+/*session_start();
 if(isset($_SESSION['sun'])){
 
+*/
 
+if(isset($_POST['guarda'])){
+  $cajas =$_POST['num_cajas'];
+  $instruccion = $_POST['txt_instrucciones'];
+  $insertaExamen=$conexion->query("insert into examen(nombre) values('CAJAS')");
+  $idtxt = 0;
+		for($i=1; $i<=$cajas; $i++){
+			$idtxt++;
+			$txtcaja =$_POST['text'.$idtxt];
 
-if(isset($_POST['Guardar'])){
-  $instruccion=$_POST['txt_instrucciones'];
-
+			$insertaCajas=$conexion->query("insert into cajas(instrucciones, texto_caja, id_exam, grupo_cajas) values ('$instruccion',  '$txtcaja',  2,1 )");
+			echo "SE AGREGO CORRECTAMENTE";
+		}    
 }
+//}
 ?>
 
 <!DOCTYPE html>
@@ -37,14 +47,10 @@ if(isset($_POST['Guardar'])){
 	?>
 		<center>
 
-		<form name="form1" action="" method="POST" class="wrap">
-	<p>	Instrucciones: <input type="text" name="txt_instrucciones" id="txt_instruccion"></p>
-    <!--<button type="button" form="form1" onclick="addInstrucciones()" value="Agregar">Agregar</button><br>-->
-    <br>
-
-
-    <label>Cuantas cajas requiere? </label><select name="select1" onchange="createTexts(this)">
-    <option value="" selected="selected">          </option>
+		<form id="form1" action="" method="POST" class="wrap">
+		<label>Escribe aqui las	instrucciones:</label> <input type="text" name="txt_instrucciones" id="txt_instruccion">
+		<label>Cuantas cajas requiere? </label><select id="num_caja"  name="num_cajas" onchange="createTexts(this)">
+		<option value="" selected="selected">          </option>
         <?php
         for($i=2; $i<=15;$i++){
         echo "<option value='$i'>$i</option>";
@@ -52,20 +58,32 @@ if(isset($_POST['Guardar'])){
         ?> 
     </select><br>
     <div></div>
+    <button class="boton" type="submit" form="form1" onsubmit="return validar();" name="guarda" value="Guardar">Guardar</button>
     <br>
-
-    <button class="boton" type="submit" form="form1"  value="Guardar">Guardar</button>
-    <br>
-    <button class="boton" type="submit" form="form1"  onclick="formReset()" value="NuevaPreg">Agregar serie de cajas</button>
-
-
-</form>
-		</center>
+    <button class="boton" type="submit" form="form1"   onsubmit="return validar();" onclick="formReset()" name="guarda_agrega" value="agregar"">Agregar serie de cajas</button>
+    </form>
+    </center>
 
 
 	<script>
 	function formReset(){
 		document.getElementById("form1").reset();
+	}
+
+
+	function validar(){
+		instruccion = document.getElementById("txt_instruccion").value;
+		num_caja = document.getElementById("num_caja").selectedIndex;
+		
+
+		if(instruccion == null || instruccion.length == 0 || /^\s+$/.test(instruccion)){
+			alert("Verificar el campo de instrucciones");
+			return false;
+
+		} else if(num_caja == null || num_caja == 0 ){
+			alert("Seleccione el numero de cajas que va a requerir");
+			return false;
+		}
 	}
 
 	function addInstrucciones(){
@@ -79,30 +97,28 @@ if(isset($_POST['Guardar'])){
 
 
 		idtxt=0;
-		
-			function createTexts(sel) {
-				
-				var num = sel.text;
-				if( !num ) num = sel.options[sel.selectedIndex].text;
-				if( !num ) return;
-				var html="<br><input type='text' name='caja_de_texto[]' id="+idtxt+"/><br>";
-				num = parseInt( num );
-				num = isNaN(num) ? 0 : num;
-				sel.value = num;
-				var dest = sel.parentNode.getElementsByTagName("div")[0];
-				dest.innerHTML = '';
-				for( i = 0; i < num; i++ ) {
-					dest.innerHTML += html;
-				}
-				idtxt++;
 
-}
+		function createTexts(sel) {
+			var num = sel.text;
+			if( !num ) num = sel.options[sel.selectedIndex].text;
+			if( !num ) return;
+			num = parseInt( num );
+			num = isNaN(num) ? 0 : num;
+			sel.value = num;
+			var dest = sel.parentNode.getElementsByTagName("div")[0];
+			dest.innerHTML = '';
+			idtxt=0;
+			for( i = 0; i < num; i++ ) {
+				idtxt++;
+				dest.innerHTML += "<br><input type='text' name='text"+idtxt+"' id="+idtxt+" /><br>";
+			}
+		}
 	</script>
 
-	<?php
+	<?php /*
 }else{
 	header("location: sinSesion.html");
-}
+}*/
 ?>	
 
 </body>
