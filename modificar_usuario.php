@@ -82,14 +82,14 @@ if(isset($_SESSION['sun'])){
 					{
 						$consulta_modificar=$conexion->query("Update usuarios set usuario ='{$_POST['nuevo_usuario']}', clave='{$_POST['nueva_clave']}' where usuario='{$_POST['usuario']}'");
 		?>
-						<div>
+						<div class="anuncio">
 							Usuario Modificado
 						</div>
 		<?php
 					}	
 					else{
 		?> 			
-						 <div>
+						 <div class="anuncio">
 							Usuario no encontrado
 						 </div>
 
