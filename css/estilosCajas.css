@@ -1,0 +1,25 @@
+ .destino {
+                float: left;
+                min-width:  250px;
+                min-height: 250px;
+                padding: 10px;
+                margin: 10px;
+            }
+            
+
+            .destino {
+                background-color: #8860FF;
+            }
+            
+            .arrastrable {
+                background-color: #4CC;
+                padding: 5px;
+                margin: 5px;
+            }
+
+            .foco input:focus {
+                background:#fff;
+                width: 190px;
+
+            }
+
